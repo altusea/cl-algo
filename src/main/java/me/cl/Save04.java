@@ -1,3 +1,5 @@
+package me.cl;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,7 +34,7 @@ public class Save04 {
                     }
 
                     char repeat = program.charAt(id);
-                    sb.append(String.valueOf(repeat).repeat(Math.max(0, acc)));
+                    for (int c = 0; c < Math.max(0, acc); c++) sb.append(repeat);
                     id += 2;
                 } else {
                     sb.append(program.charAt(id));

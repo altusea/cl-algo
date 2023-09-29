@@ -1,10 +1,13 @@
+package me.cl;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Save07 {
+public class Save03 {
+
     static class TreeNode {
         TreeNode left, right;
         String val;
@@ -40,24 +43,14 @@ public class Save07 {
             if (treeRoot == null) treeRoot = root; // remember root
 
             if (!info[1].equals("0")) {
-                TreeNode left;
-                if (map.containsKey(info[1])) {
-                    left = map.get(info[1]);
-                } else {
-                    left = new TreeNode(info[1]);
-                    map.put(info[1], left);
-                }
+                TreeNode left = new TreeNode(info[1]);
+                map.put(info[1], left);
                 root.left = left;
             }
 
             if (!info[2].equals("0")) {
-                TreeNode right;
-                if (map.containsKey(info[2])) {
-                    right = map.get(info[2]);
-                } else {
-                    right = new TreeNode(info[2]);
-                    map.put(info[2], right);
-                }
+                TreeNode right = new TreeNode(info[2]);
+                map.put(info[2], right);
                 root.right = right;
             }
         }

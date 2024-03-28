@@ -40,7 +40,9 @@ public class Save07 {
             } else {
                 root = map.get(info[0]);
             }
-            if (treeRoot == null) treeRoot = root; // remember root
+            if (treeRoot == null) {
+                treeRoot = root; // remember root
+            }
 
             if (!info[1].equals("0")) {
                 TreeNode left;

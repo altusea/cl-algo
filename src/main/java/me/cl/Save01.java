@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Save01 {
 
@@ -25,12 +24,14 @@ public class Save01 {
             data.add(arr);
         }
 
-        List<int[]> front = data.stream().filter(item -> item[0] <= item[1])
+        List<int[]> front = data.stream()
+                .filter(item -> item[0] <= item[1])
                 .sorted(Comparator.comparingInt(o -> o[0]))
-                .collect(Collectors.toList());
+                .toList();
         List<int[]> rear = data.stream()
-                .filter(item -> item[0] > item[1]).sorted((o1, o2) -> o2[1] - o1[1])
-                .collect(Collectors.toList());
+                .filter(item -> item[0] > item[1])
+                .sorted((o1, o2) -> o2[1] - o1[1])
+                .toList();
 
         int a = 0, total = 0;
         for (int[] item : front) {

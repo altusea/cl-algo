@@ -34,7 +34,7 @@ public class Save04 {
                     }
 
                     char repeat = program.charAt(id);
-                    for (int c = 0; c < Math.max(0, acc); c++) sb.append(repeat);
+                    sb.append(String.valueOf(repeat).repeat(Math.max(0, acc)));
                     id += 2;
                 } else {
                     sb.append(program.charAt(id));

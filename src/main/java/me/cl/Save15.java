@@ -9,12 +9,12 @@ import java.io.InputStreamReader;
  */
 public class Save15 {
 
-    static boolean isMatch(String p, String s) {
-        int lenP = p.length(), lenS = s.length();
+    static boolean isMatch(String pattern, String str) {
+        int lenP = pattern.length(), lenS = str.length();
         boolean[][] dp = new boolean[lenP + 1][lenS + 1];
         dp[0][0] = true;
         for (int i = 1; i <= lenP; i++) {
-            if (p.charAt(i - 1) != '*') {
+            if (pattern.charAt(i - 1) != '*') {
                 break;
             }
             dp[i][0] = true;
@@ -22,9 +22,9 @@ public class Save15 {
 
         for (int i = 1; i <= lenP; i++) {
             for (int j = 1; j <= lenS; j++) {
-                if (p.charAt(i - 1) == s.charAt(j - 1) || p.charAt(i - 1) == '?') {
+                if (pattern.charAt(i - 1) == str.charAt(j - 1) || pattern.charAt(i - 1) == '?') {
                     dp[i][j] = dp[i - 1][j - 1];
-                } else if (p.charAt(i - 1) == '*') {
+                } else if (pattern.charAt(i - 1) == '*') {
                     dp[i][j] = dp[i - 1][j] | dp[i][j - 1];
                 }
             }

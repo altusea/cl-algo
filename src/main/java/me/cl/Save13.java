@@ -21,7 +21,9 @@ public class Save13 {
                 heightsInt.add(Integer.parseInt(s));
             }
             heightsInt.sort(Comparator.comparingInt(o -> o));
-            System.out.println(heightsInt.stream().map(String::valueOf).collect(Collectors.joining(" ")));
+            System.out.println(heightsInt.stream()
+                    .map(String::valueOf)
+                    .collect(Collectors.joining(" ")));
         }
     }
 }

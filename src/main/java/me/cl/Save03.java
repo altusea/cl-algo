@@ -8,7 +8,8 @@ import java.util.Map;
 
 public class Save03 {
 
-    static class TreeNode {
+    public static class TreeNode {
+
         TreeNode left, right;
         String val;
 
